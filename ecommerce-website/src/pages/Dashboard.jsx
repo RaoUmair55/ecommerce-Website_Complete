@@ -21,7 +21,7 @@ const Dashboard = () => {
       setLoading(true);
       try {
         const token = localStorage.getItem('token');
-        const { data } = await axios.get('http://localhost:5000/api/orders/admin/stats', {
+        const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_LINK}/api/orders/admin/stats`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setStats(data);

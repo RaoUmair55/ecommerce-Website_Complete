@@ -11,7 +11,7 @@ export const createOrder = async (order, token) => {
 
 export const fetchMyOrders = async (token) => {
   const { data } = await axios.get(
-    'http://localhost:5000/api/orders/my',
+    `${import.meta.env.VITE_BACKEND_LINK}/api/orders/my`,
     { headers: { Authorization: `Bearer ${token}` } }
   );
   return data;
@@ -19,7 +19,7 @@ export const fetchMyOrders = async (token) => {
 
 export const fetchAllOrders = async (token) => {
   const { data } = await axios.get(
-    'http://localhost:5000/api/orders',
+    `${import.meta.env.VITE_BACKEND_LINK}/api/orders`,
     { headers: { Authorization: `Bearer ${token}` } }
   );
   return data;
@@ -27,7 +27,7 @@ export const fetchAllOrders = async (token) => {
 
 export const updateOrderStatus = async (id, status, token) => {
   const { data } = await axios.put(
-    `http://localhost:5000/api/orders/${id}`,
+    `${import.meta.env.VITE_BACKEND_LINK}/api/orders/${id}`,
     { status },
     { headers: { Authorization: `Bearer ${token}` } }
   );

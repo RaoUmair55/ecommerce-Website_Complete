@@ -15,7 +15,7 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/auth/register', form);
+      await axios.post(`${import.meta.env.VITE_BACKEND_LINK}/api/auth/register`, form);
       showToast('Registration successful! Please login.');
       navigate('/login');
     } catch (err) {

@@ -19,7 +19,7 @@ const Profile = () => {
       setLoading(true);
       try {
         const token = localStorage.getItem('token');
-        const { data } = await axios.get('http://localhost:5000/api/user/profile', {
+        const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_LINK}/api/user/profile`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUser(data.user);
@@ -43,7 +43,7 @@ const Profile = () => {
     setSaving(true);
     try {
       const token = localStorage.getItem('token');
-      const { data } = await axios.put('http://localhost:5000/api/user/profile', form, {
+      const { data } = await axios.put(`${import.meta.env.VITE_BACKEND_LINK}/api/user/profile`, form, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUser(data.user);

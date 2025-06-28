@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await axios.post('http://localhost:5000/api/auth/login', form);
+      const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_LINK}/api/auth/login`, form);
       console.log('Login response:', data); // Debug log
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));

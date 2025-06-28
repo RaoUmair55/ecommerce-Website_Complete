@@ -13,7 +13,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+      await axios.post(`${import.meta.env.VITE_BACKEND_LINK}/api/auth/forgot-password`, { email });
       setSubmitted(true);
       showToast('Password reset instructions sent to your email!');
     } catch (err) {

@@ -29,7 +29,7 @@ const AdminDashboard = () => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/products');
+      const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_LINK}/api/products`);
       setProducts(data.products);
       setLoading(false);
     } catch (err) {
