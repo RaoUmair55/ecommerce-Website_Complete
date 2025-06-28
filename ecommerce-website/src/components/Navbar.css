@@ -1,0 +1,77 @@
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+  backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid rgba(200, 200, 200, 0.18);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.animated-navbar {
+  animation: fadeInDown 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.brand-gradient {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.brand-icon {
+  display: flex;
+  align-items: center;
+  color: #e52e71;
+  filter: drop-shadow(0 2px 8px rgba(229,46,113,0.12));
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.nav-anim {
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-anim::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: right;
+  border-radius: 2px;
+}
+
+.nav-anim:hover, .nav-anim:focus {
+  color: #e52e71 !important;
+  background: rgba(229, 46, 113, 0.07);
+}
+
+.nav-anim:hover::after, .nav-anim:focus::after {
+  transform: scaleX(1);
+  transform-origin: left;
+} 
